@@ -1,0 +1,29 @@
+
+
+CREATE TABLE [dbo].[products] (
+    [Id]          INT           NOT NULL IDENTITY,
+    [Title]       VARCHAR (50)  NOT NULL,
+    [description] VARCHAR (50)  NOT NULL,
+    [image]       VARCHAR (255) NOT NULL,
+    [price]       INT           NOT NULL,
+    [quantity]    INT           NOT NULL,
+    [status]      VARCHAR (1)   NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+.................................
+
+Install-Package Microsoft.Data.SqlClient
+....................
+Model
+Create the ADO.NET repository
+Register the repository in Program.cs
+Create the product images folder  wwwroot/images/products
+Data/ProductImageService.cs
+................................
+//program.cs
+builder.Services.AddScoped<ProductRepository>();
+builder.Services.AddScoped<ProductImageService>();
+..................
+"ConnectionStrings": {
+  "DefaultConnection": ""
+}
